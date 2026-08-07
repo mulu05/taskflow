@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; }
+  body { background: transparent; width: 512px; height: 512px; overflow: hidden; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="512" height="512"></canvas>
+<script>
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><radialGradient id="rS" cx="35%" cy="30%" r="65%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="100%" stop-color="#000000" stop-opacity="0.22"/></radialGradient><radialGradient id="sG" cx="38%" cy="28%" r="62%"><stop offset="0%" stop-color="#2a2a3a"/><stop offset="60%" stop-color="#0f0f14"/><stop offset="100%" stop-color="#000008"/></radialGradient><radialGradient id="hL" cx="40%" cy="20%" r="55%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient><linearGradient id="sP" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a89fff"/><stop offset="100%" stop-color="#4a3fd4"/></linearGradient><linearGradient id="sT" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6ef0e0"/><stop offset="100%" stop-color="#0d7a6e"/></linearGradient><linearGradient id="sPD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c6fff"/><stop offset="100%" stop-color="#2d1fa8"/></linearGradient><linearGradient id="sTD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2dd4bf"/><stop offset="100%" stop-color="#0a5e55"/></linearGradient><linearGradient id="bG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2a2a3a"/><stop offset="100%" stop-color="#111118"/></linearGradient></defs><g transform="translate(200,200)"><circle cx="4" cy="6" r="168" fill="#000000" opacity="0.45"/><path d="M0,-162 A162,162 0 0,1 162,0 L145,0 A145,145 0 0,0 0,-145Z" fill="url(#sP)" opacity="0.6"/><path d="M162,0 A162,162 0 0,1 0,162 L0,145 A145,145 0 0,0 145,0Z" fill="url(#sT)" opacity="0.6"/><path d="M0,162 A162,162 0 0,1 -162,0 L-145,0 A145,145 0 0,0 0,145Z" fill="url(#sPD)" opacity="0.6"/><path d="M-162,0 A162,162 0 0,1 0,-162 L0,-145 A145,145 0 0,0 -145,0Z" fill="url(#sTD)" opacity="0.6"/><path d="M0,-162 A162,162 0 0,1 162,0" fill="none" stroke="url(#sP)" stroke-width="34" stroke-linecap="butt"/><path d="M162,0 A162,162 0 0,1 0,162" fill="none" stroke="url(#sT)" stroke-width="34" stroke-linecap="butt"/><path d="M0,162 A162,162 0 0,1 -162,0" fill="none" stroke="url(#sPD)" stroke-width="34" stroke-linecap="butt"/><path d="M-162,0 A162,162 0 0,1 0,-162" fill="none" stroke="url(#sTD)" stroke-width="34" stroke-linecap="butt"/><circle cx="0" cy="0" r="162" fill="none" stroke="url(#rS)" stroke-width="34"/><circle cx="0" cy="0" r="128" fill="url(#sG)"/><circle cx="0" cy="0" r="128" fill="none" stroke="#7c6fff" stroke-width="1.5" opacity="0.5"/><ellipse cx="-28" cy="-38" rx="42" ry="28" fill="url(#hL)"/><rect x="-58" y="-78" width="116" height="140" rx="10" fill="#0a0a12" stroke="#7c6fff" stroke-width="0.5" opacity="0.4"/><rect x="-56" y="-77" width="112" height="138" rx="9" fill="url(#bG)" stroke="#7c6fff" stroke-width="2"/><rect x="-24" y="-90" width="48" height="24" rx="12" fill="#0a0a12" stroke="#7c6fff" stroke-width="1.5"/><rect x="-14" y="-86" width="28" height="14" rx="7" fill="#7c6fff" opacity="0.45"/><ellipse cx="-4" cy="-82" rx="7" ry="3" fill="#ffffff" opacity="0.2"/><rect x="-36" y="-38" width="17" height="17" rx="3.5" fill="none" stroke="#7c6fff" stroke-width="2.2"/><path d="M-33,-30 L-28,-24 L-21,-36" fill="none" stroke="#7c6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="-10" y="-36" width="40" height="6" rx="3" fill="#222232"/><rect x="-10" y="-28" width="28" height="6" rx="3" fill="#222232"/><rect x="-36" y="-8" width="17" height="17" rx="3.5" fill="none" stroke="#2dd4bf" stroke-width="2.2"/><path d="M-33,0 L-28,6 L-21,-6" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="-10" y="-6" width="40" height="6" rx="3" fill="#222232"/><rect x="-10" y="2" width="32" height="6" rx="3" fill="#222232"/><rect x="-36" y="22" width="17" height="17" rx="3.5" fill="none" stroke="#7c6fff" stroke-width="2.2"/><path d="M-33,30 L-28,36 L-21,24" fill="none" stroke="#7c6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="-10" y="24" width="40" height="6" rx="3" fill="#222232"/><rect x="-10" y="32" width="24" height="6" rx="3" fill="#222232"/><circle cx="0" cy="0" r="128" fill="url(#hL)"/></g></svg>`;
+
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+// 背景を黒で塗りつぶし（透明にしない）
+ctx.fillStyle = '#0f0f0f';
+ctx.fillRect(0, 0, 512, 512);
+
+const img = new Image();
+const blob = new Blob([svg], {type: 'image/svg+xml'});
+const url = URL.createObjectURL(blob);
+img.onload = function() {
+  ctx.drawImage(img, 0, 0, 512, 512);
+  URL.revokeObjectURL(url);
+  // 自動ダウンロード
+  const a = document.createElement('a');
+  a.download = 'icon-512.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+  document.body.innerHTML = '<div style="font-family:sans-serif;padding:20px;color:#0f0f0f">✓ ダウンロード完了！ icon-512.png を GitHubにアップロードしてください。</div>';
+};
+img.src = url;
+</script>
+</body>
+</html>
